@@ -5,6 +5,7 @@ import org.w3c.dom.css.Rect;
 public class Rectangle {
     private double width;
     private double height;
+    private Color fillColor;
 
     // Constructors - überladener Konstruktor (overloading)
     public Rectangle(double width, double height){
@@ -14,7 +15,15 @@ public class Rectangle {
     public Rectangle(double length){
       this(length, length);
     }
-
+    public Rectangle(Color c){
+        this(1.0);
+        fillColor = c;
+    }
+    // Copy Constructor
+    public Rectangle(Rectangle other){
+        this(other.width, other.height);
+        fillColor = other.fillColor;
+    }
     public Rectangle(){};
 
     public double getArea(){
@@ -33,5 +42,10 @@ public class Rectangle {
     public void setHeight(double height) {
         this.height = height;
     }
-
+    public void setFillColor(Color c){
+        fillColor = c;
+    }
+    public Color getFillColor(){
+        return fillColor;
+    }
 }
