@@ -36,14 +36,20 @@ public class Main {
         Double[] doubleArray = {1.1, 2.2, 3.3, 4.4, 5.5};
         System.out.println("Maximum Double: " + findMax(doubleArray));
 
-        List<Ant> firstants = new ArrayList<>();
+        List<Animal> firstants = new ArrayList<>();
         firstants.add(new Ant());
-        List<Ant> secondants = new ArrayList<>();
+        List<Animal> secondants = new ArrayList<>();
         secondants.add(new Ant());
-        List<Ant> mergedants = merge(firstants,secondants);
-        for (Ant a : mergedants) {
-            System.out.println(a);
-        }
+        List<Animal> mergedants = merge(firstants,secondants);
+
+        List<Ant> words1 = new ArrayList<>();
+        words1.add(new Ant());
+        List<Ant> words2 = new ArrayList<>();
+        words2.add(new Ant());
+        //List<String> mergewords = merge(words1,words2);
+        //for (Ant a : mergedants) {
+        //    System.out.println(a);
+        //}
 
         /*
         String s1 = "Birke";
@@ -62,7 +68,7 @@ public class Main {
     // AUFGABE 1
     // Schreibe eine generische Methode "merge" die zwei Listen von Ant Objekten
     // entgegennimmt und eine Liste zurückgibt die alle Elemente enthält.
-    public static <T> List<T> merge(List<T> firstelements, List<T> secondelements){
+    public static <T extends Animal> List<T> merge(List<T> firstelements, List<T> secondelements){
         List<T> merged = new ArrayList<>();
         merged.addAll(firstelements);
         merged.addAll(secondelements);
